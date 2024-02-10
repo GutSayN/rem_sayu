@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Alumnos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="manifest" href="./manifest.json">
+    <script type="text/javascript">
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("sw.js");
+        }
+      </script>
+    
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-image:url("Edimburgo\ Escocia.jpeg") }
+
+        .estudiante-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px; /* Espacio entre contenedores */
+            padding: 70px;
+            background-color: #1f413a; /* Color de fondo del contenedor */
+            opacity: 90%;;
+            border-radius: 6px;
+            box-shadow: 0 9px 9px rgba(177, 177, 177, 0.701); /* Sombra suave */
+            max-width: 100%; /* Ancho máximo del contenedor */
+            width: 100%;
+        }
+
+        .estudiante-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            color: aliceblue;
+        }
+
+        .estudiante-info li {
+            margin-bottom: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; /* Bordes redondeados para la imagen */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <header class="container-fluid  text-white text-center p-3">
+            <img src="h.arcpublishing.com/prisa/YYEJFDSWXRED7KMYX2YCRFXZ7A.jpg" class="img-fluid" alt="">
+            <img src="https://vagaspelomundo.com.br/wp-content/uploads/2016/08/vagas-universidade-toronto.jpg" class="img-fluid" alt="">
+            
+            <h1 class="mt-2">Lista Alumnos</h1>
+        </header>
+        <nav class="mt-2 container">
+            <form id="formBuscar" class="input-group" onsubmit="buscarImagenes(); return false;">
+                <span class="input-group-text">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                    </svg>
+                </span>
+                <input class="form-control" type="search" name="txtBuscar" id="txtBuscar" placeholder="Buscar estudiante por nombre o matrícula" oninput="buscarImagenes(); return false;">
+            </form>
+        </nav>
+
+        <section class="mt-3 container">
+            <div id="MostrarListaImagenes" class="row">
+                <!-- Contenido de la lista de imágenes se agregará dinámicamente con JavaScript -->
+            </div>
+        </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="./lImagenAlumno.js"></script>
+    <script src=""> </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            mostrarListaImagenes(imagenes);
+        });
+    </script>
+</body>
+
+</html>
